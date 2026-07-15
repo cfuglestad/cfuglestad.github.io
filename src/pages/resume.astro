@@ -1,12 +1,44 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
 import '../styles/global.css';
 ---
-<BaseLayout title="Resume | Connor Fuglestad" description="Resume for Connor Fuglestad.">
+
+<BaseLayout
+  title="Resume | Connor Fuglestad"
+  description="View or download Connor Fuglestad's data science resume."
+>
+  <Header />
+
   <main class="resume-placeholder shell">
     <p class="kicker">Resume</p>
-    <h1>Add your final PDF before deployment.</h1>
-    <p>Place your resume at <code>public/resume/Fuglestad_resume_2026_ds.pdf</code>, then replace this page with a direct link or embedded viewer.</p>
-    <a class="button primary" href="/">Return home</a>
+    <h1>Connor Fuglestad</h1>
+    <p>
+      Applied data scientist and analytics engineering leader focused on
+      healthcare AI, natural language technology, and scalable data systems.
+    </p>
+
+    <div class="hero-actions">
+      <a
+        class="button primary"
+        href="/resume/Fuglestad_resume_2026_ds.pdf"
+        target="_blank"
+        rel="noreferrer"
+      >
+        View resume
+      </a>
+
+      <a
+        class="button secondary"
+        href="/resume/Fuglestad_resume_2026_ds.pdf"
+        download
+      >
+        Download PDF
+      </a>
+    </div>
+
+    <p>
+      <a href="/">Return home</a>
+    </p>
   </main>
 </BaseLayout>
