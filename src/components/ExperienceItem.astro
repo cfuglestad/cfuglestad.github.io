@@ -1,0 +1,19 @@
+---
+interface Props {
+  role: string;
+  company: string;
+  dates: string;
+  summary: string;
+}
+const { role, company, dates, summary } = Astro.props;
+---
+<article class="experience-item">
+  <div>
+    <p class="experience-role">{role}</p>
+    <p class="experience-company">{company}</p>
+  </div>
+  <div>
+    <p class="experience-dates">{dates}</p>
+    <p>{summary}</p>
+  </div>
+</article>

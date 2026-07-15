@@ -1,59 +1,58 @@
-# 📊 Connor Fuglestad – Data & Analytics Engineer Portfolio  
+# Connor Fuglestad Portfolio
 
-Welcome! 👋 I’m **Connor Fuglestad**, a **Senior Analytics Engineer at Vizient, Inc.**, specializing in **data engineering, pipeline automation, and analytics solutions** that scale across healthcare systems. My work bridges **data engineering, analytics, and visualization**, with a strong focus on **ETL, automation, and empowering end-users with actionable insights**.  
+A modern Astro-based portfolio for Connor Fuglestad, focused on applied data science, analytics engineering, healthcare AI, and natural language technology.
 
----
+## Why this rebuild
 
-## 🚀 Featured Projects  
+The previous site was a large static Bootstrap template with duplicated content and many legacy assets. This version is intentionally small, responsive, and easier to maintain. Content lives in reusable Astro components, and deployments are automated through GitHub Pages.
 
-### 🔹 Automated PowerPoint Reporting Pipelines  
-- Built Python-based pipelines to generate **hundreds of hospital-specific PowerPoint decks** (LOS, readmissions, post-COVID trends).  
-- Reduced analyst workload by **8+ hours per hospital**.  
-- Tech: `Python`, `SQL`, `pptx`, `multiprocessing`.  
+## Run locally
 
-### 🔹 Productivity Dashboard Modernization  
-- Migrated legacy dashboard to **QlikSense** with dynamic leader filters.  
-- Implemented SQL-driven enhancements aligned with shifting business targets.  
-- Reduced reporting turnaround by **1+ week**.  
+```bash
+npm install
+npm run dev
+```
 
-### 🔹 Predictive Modeling Insights  
-- Partnered with data science teams on patient-focused predictive models.  
-- Implemented **SHAP value visualizations** to explain model outputs to stakeholders.  
-- Improved adoption and trust in machine learning outputs.  
+Open the local URL shown in the terminal.
 
-### 🔹 Data Engineering Foundations  
-- Designed scalable **ETL & warehouse architectures** (Starburst/Trino + SQL).  
-- Refactored legacy pipelines, cutting runtimes by **95%**.  
-- Hands-on with **dbt, Databricks, PySpark** as part of modernizing analytics workflows.  
+## Build
 
----
+```bash
+npm run build
+```
 
-## 🛠️ Technical Skills  
+The static site is generated in `dist/`.
 
-**Core Expertise**  
-- `Python`, `SQL (Starburst, T-SQL, Trino)`, `ETL Pipelines`, `Data Warehousing`, `Power BI`, `QlikSense`, `Git`, `Visualization (matplotlib, seaborn, pptx)`  
+## Deploy to GitHub Pages
 
-**Emerging Skills**  
-- `dbt`, `Databricks`, `PySpark`, `Airflow/Dagster`, `Docker`, `Azure/AWS/GCP`  
+1. Replace the contents of the `cfuglestad.github.io` repository with this project.
+2. Commit and push to the `main` branch.
+3. In GitHub, open **Settings > Pages**.
+4. Under **Build and deployment**, choose **GitHub Actions**.
+5. The included workflow will build and publish the site after each push.
 
-**Past Tools**  
-- `SAS`, `R`  
+## Add the resume
 
----
+1. Copy the final resume PDF to:
 
-## 📈 Career Highlights  
-- **Promoted to Sr. Analytics Engineer** within 2 years at Vizient for leadership in automation and data products.  
-- Designed and led end-to-end pipelines adopted by **hundreds of member hospitals**.  
-- Blended technical and stakeholder-facing work, translating complex data pipelines into business-ready deliverables.  
+   `public/resume/Fuglestad_resume_2026_ds.pdf`
 
----
+2. In `src/pages/index.astro`, change the Resume button from:
 
-## 🤝 Let’s Connect  
-- 📧 Email: connor.fuglestad@vizientinc.com  
-- 💼 [LinkedIn](https://www.linkedin.com/in/connorfuglestad)  
-- 🐙 [GitHub Portfolio](https://github.com/connorfuglestad)  
+   `href="/resume/"`
 
----
+   to:
 
-### ⚡ About This Portfolio  
-This repo highlights a collection of **data engineering projects, reporting automation examples, and analytics workflows** I’ve developed. While not all production work can be shared due to client confidentiality, I’ve recreated and anonymized representative examples to demonstrate my technical approach, problem-solving, and impact.  
+   `href="/resume/Fuglestad_resume_2026_ds.pdf"`
+
+## Add or edit projects
+
+The project cards are stored in the `projects` array near the top of `src/pages/index.astro`. Edit the title, description, tags, status, or add an `href` when a full project page or GitHub repository is ready.
+
+## Recommended next steps
+
+- Add the final data science resume PDF.
+- Replace placeholder project statuses as work is completed.
+- Add individual project pages under `src/pages/projects/`.
+- Add a writing section when the first technical article is ready.
+- Update GitHub pinned repositories to match the projects featured here.

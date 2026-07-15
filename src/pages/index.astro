@@ -1,0 +1,206 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import ExperienceItem from '../components/ExperienceItem.astro';
+import '../styles/global.css';
+
+const focusAreas = [
+  {
+    title: 'Healthcare AI',
+    body: 'Applying language technologies, machine learning, and quantitative methods to clinical and operational challenges.'
+  },
+  {
+    title: 'Applied Data Science',
+    body: 'Building reproducible analytical workflows grounded in econometrics, statistical modeling, and careful evaluation.'
+  },
+  {
+    title: 'Production Data Systems',
+    body: 'Designing scalable pipelines, APIs, and data models with Databricks, PySpark, SQL, and Python.'
+  }
+];
+
+const projects = [
+  {
+    eyebrow: 'Flagship project',
+    title: 'Healthcare Evidence Explorer',
+    description: 'A planned evidence synthesis platform that will retrieve, summarize, and evaluate healthcare research with transparent citations and model-quality checks.',
+    tags: ['NLP', 'RAG', 'LLM Evaluation', 'Healthcare'],
+    status: 'In development'
+  },
+  {
+    eyebrow: 'Coursework portfolio',
+    title: 'Natural Language Technology',
+    description: 'A growing collection of polished projects from the University of Washington certificate program, focused on language modeling, information retrieval, and evaluation.',
+    tags: ['Python', 'NLP', 'Information Retrieval', 'Evaluation'],
+    status: 'Beginning 2026'
+  },
+  {
+    eyebrow: 'Professional case study',
+    title: 'Scalable Healthcare Analytics Systems',
+    description: 'A sanitized case study on modernizing healthcare analytics through reusable data pipelines, API-driven ingestion, dimensional models, and governed reporting layers.',
+    tags: ['Databricks', 'PySpark', 'SQL', 'APIs'],
+    status: 'Drafting'
+  }
+];
+---
+<BaseLayout
+  title="Connor Fuglestad | Applied Data Science and Healthcare AI"
+  description="Portfolio of Connor Fuglestad, an applied data scientist and analytics engineering leader focused on healthcare AI, natural language technology, and scalable data systems."
+>
+  <Header />
+
+  <main id="top">
+    <section class="hero shell">
+      <div class="hero-copy">
+        <p class="kicker">Applied data science · analytics engineering · healthcare AI</p>
+        <h1>Building rigorous data systems and AI applications for healthcare.</h1>
+        <p class="hero-lede">
+          I am Connor Fuglestad, a technical analytics leader with more than seven years of experience across healthcare and consulting. I build production data systems today while expanding my work in natural language processing, machine learning, and applied research.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#work">View selected work</a>
+          <a class="button secondary" href="/resume/">Resume</a>
+        </div>
+        <div class="social-row" aria-label="Professional profiles">
+          <a href="https://github.com/cfuglestad" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/connor-fuglestad" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="mailto:fuglconn@gmail.com">Email</a>
+        </div>
+      </div>
+      <aside class="hero-panel" aria-label="Current focus">
+        <p class="panel-label">Current focus</p>
+        <p class="panel-title">Healthcare AI and natural language technology</p>
+        <p>Lead, Analytics & Insights at Vizient</p>
+        <p>University of Washington Certificate in Natural Language Technology, expected 2027</p>
+        <div class="panel-rule"></div>
+        <p class="panel-small">Omaha, Nebraska</p>
+      </aside>
+    </section>
+
+    <section id="about" class="section shell">
+      <div class="section-heading">
+        <p class="kicker">About</p>
+        <h2>An economist, engineer, and healthcare data practitioner.</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-copy">
+          <p>
+            My background combines graduate training in economics and econometrics with hands-on experience building analytics products, API integrations, and production data pipelines for health systems. I am especially interested in work that requires both technical depth and strong judgment about how data should be used.
+          </p>
+          <p>
+            In my current role, I lead analytics engineering efforts for large health system clients using Databricks, PySpark, SQL, and Python. I set technical standards, guide solution design, and build reusable systems that support reliable decision-making. My next chapter is focused on applying that foundation to NLP, machine learning, and healthcare AI.
+          </p>
+        </div>
+        <div class="focus-grid">
+          {focusAreas.map((area) => (
+            <article class="focus-card">
+              <h3>{area.title}</h3>
+              <p>{area.body}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section id="work" class="section section-alt">
+      <div class="shell">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="kicker">Selected work</p>
+            <h2>Projects that connect healthcare, language, and quantitative research.</h2>
+          </div>
+          <p class="section-note">This section is intentionally small. Each project will become a full case study as the work matures.</p>
+        </div>
+        <div class="project-grid">
+          {projects.map((project) => <ProjectCard {...project} />)}
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section shell">
+      <div class="section-heading">
+        <p class="kicker">Experience</p>
+        <h2>A progression from quantitative analysis to technical leadership.</h2>
+      </div>
+      <div class="experience-list">
+        <ExperienceItem
+          role="Lead, Analytics & Insights"
+          company="Vizient, Inc."
+          dates="December 2025 to present"
+          summary="Lead analytics engineering initiatives for large health system clients, including production pipelines, API-driven ingestion, dimensional data models, technical standards, and client-facing solution design."
+        />
+        <ExperienceItem
+          role="Senior Analytics Engineer"
+          company="Vizient, Inc."
+          dates="April 2025 to December 2025"
+          summary="Led modernization efforts across analytics products, including platform migration, reusable Python components, AI-assisted analysis, and interactive reporting experiences."
+        />
+        <ExperienceItem
+          role="Analytics Engineer"
+          company="Vizient, Inc."
+          dates="November 2022 to April 2025"
+          summary="Built and optimized foundational Python and SQL workflows that reduced manual effort, improved performance, and supported reporting across client health systems."
+        />
+        <ExperienceItem
+          role="Analytics Consultant"
+          company="University of Wisconsin Health System"
+          dates="January 2022 to November 2022"
+          summary="Applied statistical and econometric methods to clinical and operational data, supporting forecasting, staffing decisions, quality measurement, and self-service analytics."
+        />
+        <ExperienceItem
+          role="Consultant"
+          company="Resolution Economics"
+          dates="April 2019 to July 2020"
+          summary="Constructed analytical datasets and communicated quantitative findings for economic consulting and class action litigation."
+        />
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="shell education-grid">
+        <div class="section-heading">
+          <p class="kicker">Education</p>
+          <h2>Quantitative training with a growing focus on language technology.</h2>
+        </div>
+        <div class="education-list">
+          <article>
+            <p class="education-school">University of Washington</p>
+            <h3>Certificate in Natural Language Technology</h3>
+            <p>In progress, expected 2027</p>
+          </article>
+          <article>
+            <p class="education-school">University of Wisconsin–Madison</p>
+            <h3>Master of Science, Economics</h3>
+            <p>Econometrics, mathematical economics, microeconomic theory, and macroeconomic theory</p>
+          </article>
+          <article>
+            <p class="education-school">University of Wisconsin–Madison</p>
+            <h3>Bachelor of Arts, Economics and German</h3>
+            <p>Mathematical emphasis, graduated with distinction</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <div class="shell contact-inner">
+        <div>
+          <p class="kicker light">Contact</p>
+          <h2>Interested in healthcare AI, applied data science, or technical analytics leadership?</h2>
+        </div>
+        <div class="contact-actions">
+          <a class="button light-button" href="mailto:fuglconn@gmail.com">Email Connor</a>
+          <a class="text-link light-link" href="https://www.linkedin.com/in/connor-fuglestad" target="_blank" rel="noreferrer">Connect on LinkedIn <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-inner">
+      <p>© {new Date().getFullYear()} Connor Fuglestad</p>
+      <p>Built with Astro and deployed on GitHub Pages.</p>
+    </div>
+  </footer>
+</BaseLayout>
