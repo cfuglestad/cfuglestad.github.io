@@ -50,3 +50,45 @@ Clone the repository and install dependencies:
 git clone https://github.com/cfuglestad/cfuglestad.github.io.git
 cd cfuglestad.github.io
 npm install
+```
+
+Start the local development server:
+
+```bash
+npm run dev
+```
+
+Create a production build:
+
+```bash
+npm run build
+```
+
+Preview the production build locally:
+
+```bash
+npm run preview
+```
+
+## Project Structure
+
+```text
+src/
+  components/     Reusable interface components
+  layouts/        Shared page layouts
+  pages/          Website routes and page content
+  styles/         Global styling
+
+public/
+  resume/         Current resume PDF
+  images/         Static project and site images
+
+.github/
+  workflows/      Automated GitHub Pages deployment
+```
+
+## Contact
+
+- [LinkedIn](https://www.linkedin.com/in/connor-fuglestad)
+- [GitHub](https://github.com/cfuglestad)
+- [Email](mailto:fuglconn@gmail.com)
