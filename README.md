@@ -1,58 +1,104 @@
-# Connor Fuglestad Portfolio
+# \# Connor Fuglestad Portfolio
 
-A modern Astro-based portfolio for Connor Fuglestad, focused on applied data science, analytics engineering, healthcare AI, and natural language technology.
+# 
 
-## Why this rebuild
+# Personal portfolio and project site for Connor Fuglestad, an applied data scientist and analytics engineering leader focused on healthcare AI, natural language technology, quantitative analysis, and scalable data systems.
 
-The previous site was a large static Bootstrap template with duplicated content and many legacy assets. This version is intentionally small, responsive, and easier to maintain. Content lives in reusable Astro components, and deployments are automated through GitHub Pages.
+# 
 
-## Run locally
+# \## Live Site
 
-```bash
-npm install
-npm run dev
-```
+# 
 
-Open the local URL shown in the terminal.
+# \[cfuglestad.github.io](https://cfuglestad.github.io/)
 
-## Build
+# 
 
-```bash
-npm run build
-```
+# \## About
 
-The static site is generated in `dist/`.
+# 
 
-## Deploy to GitHub Pages
+# I have more than seven years of experience working across healthcare analytics, data engineering, and economic consulting. My professional work centers on building reliable analytical systems, modernizing healthcare data pipelines, and translating complex clinical and operational questions into practical data solutions.
 
-1. Replace the contents of the `cfuglestad.github.io` repository with this project.
-2. Commit and push to the `main` branch.
-3. In GitHub, open **Settings > Pages**.
-4. Under **Build and deployment**, choose **GitHub Actions**.
-5. The included workflow will build and publish the site after each push.
+# 
 
-## Add the resume
+# I am currently expanding my work in applied data science and natural language processing through the University of Washington Certificate in Natural Language Technology. This site serves as a home for selected projects, technical case studies, coursework, writing, and ongoing experiments in healthcare AI.
 
-1. Copy the final resume PDF to:
+# 
 
-   `public/resume/Fuglestad_resume_2026_ds.pdf`
+# \## Areas of Focus
 
-2. In `src/pages/index.astro`, change the Resume button from:
+# 
 
-   `href="/resume/"`
+# \- Healthcare AI and natural language processing
 
-   to:
+# \- Applied data science and quantitative modeling
 
-   `href="/resume/Fuglestad_resume_2026_ds.pdf"`
+# \- Analytics engineering and production data systems
 
-## Add or edit projects
+# \- Language-model evaluation and evidence synthesis
 
-The project cards are stored in the `projects` array near the top of `src/pages/index.astro`. Edit the title, description, tags, status, or add an `href` when a full project page or GitHub repository is ready.
+# \- Healthcare operations, quality, and decision support
 
-## Recommended next steps
+# 
 
-- Add the final data science resume PDF.
-- Replace placeholder project statuses as work is completed.
-- Add individual project pages under `src/pages/projects/`.
-- Add a writing section when the first technical article is ready.
-- Update GitHub pinned repositories to match the projects featured here.
+# \## Featured Work
+
+# 
+
+# The portfolio currently highlights work in progress across several areas:
+
+# 
+
+# \- \*\*Semantic Document Drift Analyzer:\*\* An NLP application for identifying and explaining meaningful changes across versions of policies and other high-stakes documents
+
+# \- \*\*Natural Language Technology:\*\* Selected coursework and projects from the University of Washington certificate program
+
+# \- \*\*Scalable Healthcare Analytics Systems:\*\* Sanitized case studies covering API-driven ingestion, analytical data models, and reusable healthcare reporting systems
+
+# 
+
+# Additional project pages, evaluations, and technical writing will be added as the work develops.
+
+# 
+
+# \## Technology
+
+# 
+
+# The website is built with:
+
+# 
+
+# \- \[Astro](https://astro.build/)
+
+# \- TypeScript
+
+# \- HTML and CSS
+
+# \- GitHub Pages
+
+# \- GitHub Actions
+
+# 
+
+# The site is intentionally lightweight and static, with reusable Astro components and minimal client-side JavaScript.
+
+# 
+
+# \## Local Development
+
+# 
+
+# Clone the repository and install dependencies:
+
+# 
+
+# ```bash
+
+# git clone https://github.com/cfuglestad/cfuglestad.github.io.git
+
+# cd cfuglestad.github.io
+
+# npm install
+
