@@ -12,9 +12,26 @@ const { title, description } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
     <meta name="author" content="Connor Fuglestad" />
-    <meta name="theme-color" content="#0f172a" />
+    <meta name="theme-color" content="#312e28" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <title>{title}</title>
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Connor Fuglestad",
+      "url": "https://cfuglestad.github.io",
+      "jobTitle": "Lead, Analytics & Insights",
+      "worksFor": { "@type": "Organization", "name": "Vizient, Inc." },
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "University of Wisconsin–Madison" },
+        { "@type": "CollegeOrUniversity", "name": "University of Washington" }
+      ],
+      "knowsAbout": ["Healthcare AI", "Natural Language Processing", "Applied Data Science", "Analytics Engineering"],
+      "sameAs": [
+        "https://github.com/cfuglestad",
+        "https://www.linkedin.com/in/connor-fuglestad"
+      ]
+    })} />
   </head>
   <body>
     <slot />

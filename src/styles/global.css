@@ -1,12 +1,12 @@
 :root {
-  --ink: #0f172a;
-  --muted: #536178;
-  --line: #d9e0e8;
-  --paper: #f7f8fa;
+  --ink: #312e28;
+  --muted: #5f725d;
+  --line: #d4d8d0;
+  --paper: #f5f6f3;
   --white: #ffffff;
-  --accent: #1f5f78;
-  --accent-dark: #164758;
-  --accent-soft: #e7f0f3;
+  --accent: #2e4b36;
+  --accent-dark: #353a31;
+  --accent-soft: #e8ede6;
   --max: 1120px;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--ink);
@@ -30,7 +30,7 @@ nav a:hover { color: var(--ink); }
 
 .hero { padding: 112px 0 96px; display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(280px, .75fr); gap: 72px; align-items: center; }
 .kicker { margin: 0 0 14px; color: var(--accent); font-weight: 800; text-transform: uppercase; letter-spacing: .11em; font-size: .76rem; }
-.kicker.light { color: #b9d7df; }
+.kicker.light { color: #9bb39a; }
 h1, h2, h3, p { margin-top: 0; }
 h1 { max-width: 900px; margin-bottom: 24px; font-size: clamp(3rem, 7vw, 5.8rem); line-height: .98; letter-spacing: -.055em; }
 h2 { max-width: 760px; margin-bottom: 22px; font-size: clamp(2rem, 4.2vw, 3.5rem); line-height: 1.04; letter-spacing: -.04em; }
@@ -83,7 +83,7 @@ h3 { margin-bottom: 10px; font-size: 1.18rem; line-height: 1.3; }
 .contact-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
 .light-button { color: var(--ink); background: white; }
 .light-link { color: white; }
-footer { background: #0b1220; color: #aeb8c6; }
+footer { background: #312e28; color: #b0ada8; }
 .footer-inner { min-height: 88px; display: flex; justify-content: space-between; align-items: center; gap: 20px; font-size: .88rem; }
 .footer-inner p { margin: 0; }
 .resume-placeholder { min-height: 100vh; padding: 120px 0; }
