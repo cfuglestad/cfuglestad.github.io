@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">Connor Fuglestad</title>
+  <desc id="description">Healthcare AI, applied data science, and analytics engineering</desc>
+  <rect width="1200" height="630" fill="#f5f6f3"/>
+  <circle cx="1090" cy="80" r="300" fill="#e8ede6"/>
+  <circle cx="1125" cy="585" r="190" fill="#d4d8d0" opacity=".72"/>
+  <rect x="74" y="72" width="1052" height="486" rx="32" fill="#ffffff" stroke="#d4d8d0" stroke-width="2"/>
+  <rect x="74" y="72" width="18" height="486" rx="9" fill="#2e4b36"/>
+  <text x="142" y="184" fill="#2e4b36" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="4">
+    HEALTHCARE AI · DATA SCIENCE · ANALYTICS ENGINEERING
+  </text>
+  <text x="136" y="318" fill="#312e28" font-family="Georgia, 'Times New Roman', serif" font-size="92" font-weight="700">
+    Connor Fuglestad
+  </text>
+  <text x="142" y="408" fill="#5f725d" font-family="Inter, Arial, sans-serif" font-size="36" font-weight="500">
+    Building rigorous data systems and AI applications
+  </text>
+  <text x="142" y="458" fill="#5f725d" font-family="Inter, Arial, sans-serif" font-size="36" font-weight="500">
+    for healthcare.
+  </text>
+  <text x="142" y="520" fill="#2e4b36" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700">
+    cfuglestad.github.io
+  </text>
+</svg>

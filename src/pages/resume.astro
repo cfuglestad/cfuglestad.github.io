@@ -10,10 +10,10 @@ import '../styles/global.css';
 >
   <Header />
 
-  <main class="resume-placeholder shell">
+  <main id="main-content" class="resume-placeholder shell" tabindex="-1">
     <p class="kicker">Resume</p>
     <h1>Connor Fuglestad</h1>
-    <p>
+    <p class="resume-lede">
       Applied data scientist and analytics engineering leader focused on
       healthcare AI, natural language technology, and scalable data systems.
     </p>
@@ -37,8 +37,8 @@ import '../styles/global.css';
       </a>
     </div>
 
-    <p>
-      <a href="/">Return home</a>
+    <p class="resume-return">
+      <a class="text-link" href="/">Return home <span aria-hidden="true">→</span></a>
     </p>
   </main>
 </BaseLayout>
