@@ -28,8 +28,9 @@ const imageURL = new URL(image, Astro.site);
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="author" content="Connor Fuglestad" />
-    <meta name="theme-color" content="#312e28" />
-    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#312e28" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1a1816" media="(prefers-color-scheme: dark)" />
+    <meta name="color-scheme" content="light dark" />
     {noindex && <meta name="robots" content="noindex, follow" />}
 
     <link rel="canonical" href={canonicalURL} />
@@ -95,5 +96,35 @@ const imageURL = new URL(image, Astro.site);
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
     <slot />
+    <script is:inline>
+      (() => {
+        const prefersReducedMotion = window.matchMedia(
+          '(prefers-reduced-motion: reduce)'
+        ).matches;
+
+        if (prefersReducedMotion) {
+          document.querySelectorAll('.reveal-section').forEach((el) => {
+            el.classList.add('revealed');
+          });
+          return;
+        }
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12, rootMargin: '0px 0px -60px 0px' }
+        );
+
+        document.querySelectorAll('.reveal-section').forEach((el) => {
+          observer.observe(el);
+        });
+      })();
+    </script>
   </body>
 </html>
