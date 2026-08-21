@@ -695,6 +695,207 @@ code {
   background: var(--paper);
 }
 
+/* --- Project pages --- */
+
+.project-page {
+  padding-top: 140px;
+  padding-bottom: 80px;
+  max-width: 740px;
+}
+
+.project-page-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.project-page-meta time {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.project-page h1 {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  margin-bottom: 12px;
+}
+
+.project-page-description {
+  font-size: 1.15rem;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.project-page-content {
+  margin-top: 48px;
+}
+
+.project-page-content h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 48px;
+  margin-bottom: 16px;
+}
+
+.project-page-content h3 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+
+.project-page-content p {
+  margin-bottom: 16px;
+  line-height: 1.75;
+}
+
+.project-page-content ul,
+.project-page-content ol {
+  margin-bottom: 16px;
+  padding-left: 24px;
+}
+
+.project-page-content li {
+  margin-bottom: 8px;
+  line-height: 1.65;
+}
+
+.project-page-content strong {
+  font-weight: 750;
+}
+
+.project-page-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 24px;
+  font-size: 0.92rem;
+}
+
+.project-page-content th,
+.project-page-content td {
+  padding: 10px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+}
+
+.project-page-content th {
+  font-weight: 800;
+  color: var(--accent);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+}
+
+.project-page-footer {
+  margin-top: 56px;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+/* --- Projects listing page --- */
+
+.projects-page {
+  padding-top: 140px;
+  padding-bottom: 80px;
+}
+
+.projects-page h1 {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+}
+
+.projects-section {
+  margin-top: 56px;
+}
+
+.projects-section > h2 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.course-group {
+  margin-top: 24px;
+}
+
+.course-label {
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.projects-list {
+  display: grid;
+  gap: 16px;
+}
+
+.project-list-item {
+  display: block;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--white);
+  text-decoration: none;
+  color: inherit;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.project-list-item:hover {
+  border-color: #b7c2b4;
+  box-shadow: var(--shadow-soft);
+  transform: translateY(-3px);
+}
+
+.project-list-item h3 {
+  font-size: 1.15rem;
+  font-weight: 850;
+  margin-bottom: 6px;
+}
+
+.project-list-item p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+
+.project-list-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.project-list-status {
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.project-list-status[data-status="in-progress"] {
+  background: #fef3e2;
+  color: #9a6b1c;
+}
+
+.project-list-meta time {
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
 .reveal-section {
   opacity: 0;
   transform: translateY(24px);
@@ -812,6 +1013,16 @@ code {
   .resume-placeholder,
   .error-page {
     padding: 80px 0;
+  }
+
+  .project-page,
+  .projects-page {
+    padding-top: 100px;
+  }
+
+  .project-page-footer {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
@@ -962,6 +1173,24 @@ code {
 
   code {
     background: var(--paper);
+  }
+
+  .project-list-item {
+    background: var(--paper);
+    border-color: var(--line);
+  }
+
+  .project-list-item:hover {
+    border-color: #5a7a5c;
+  }
+
+  .project-list-status[data-status="in-progress"] {
+    background: #3d3520;
+    color: #d4a84b;
+  }
+
+  .project-page-content th {
+    color: var(--accent);
   }
 
   @media (max-width: 820px) {

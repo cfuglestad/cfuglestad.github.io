@@ -28,13 +28,7 @@ const projects = [
     tags: ['NLP', 'RAG', 'LLM Evaluation', 'Healthcare'],
     status: 'In development'
   },
-  {
-    eyebrow: 'Coursework portfolio',
-    title: 'Natural Language Technology',
-    description: 'A growing collection of polished projects from the University of Washington certificate program, focused on language modeling, information retrieval, and evaluation.',
-    tags: ['Python', 'NLP', 'Information Retrieval', 'Evaluation'],
-    status: 'Beginning 2026'
-  },
+
   {
     eyebrow: 'Professional case study',
     title: 'Scalable Healthcare Analytics Systems',
@@ -118,7 +112,7 @@ const projects = [
             <p class="kicker">Selected work</p>
             <h2>Projects that connect healthcare, language, and quantitative research.</h2>
           </div>
-          <p class="section-note">This section is intentionally small. Each project will become a full case study as the work matures.</p>
+          <p class="section-note">Featured projects only. <a href="/projects/" class="text-link">See all projects including coursework →</a></p>
         </div>
         <div class="project-grid">
           {projects.map((project) => <ProjectCard {...project} />)}
