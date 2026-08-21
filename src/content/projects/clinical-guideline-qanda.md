@@ -6,7 +6,7 @@ tags: ["Python", "RAG", "LangGraph", "ChromaDB", "NLP", "Healthcare", "Evaluatio
 status: "complete"
 featured: true
 github: "https://github.com/cfuglestad/clinical-guideline-qanda"
-demo: "https://clinical-guideline-qanda.streamlit.app/"
+demo: "https://clinical-guideline-app.streamlit.app/"
 date: 2026-08-01
 ---
 
