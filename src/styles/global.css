@@ -1159,10 +1159,20 @@ code {
 
   .contact-section {
     background: #0f0e0c;
+    color: #e8e6e2;
+  }
+
+  .light-link {
+    color: #e8e6e2;
+  }
+
+  .light-button {
+    color: #0f0e0c;
   }
 
   footer {
     background: #0f0e0c;
+    color: #d2d0cb;
     border-top-color: rgba(255, 255, 255, 0.08);
   }
 
