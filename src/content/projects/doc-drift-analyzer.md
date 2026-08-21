@@ -6,6 +6,7 @@ tags: ["Python", "NLP", "Streamlit", "Semantic Similarity", "sentence-transforme
 status: "complete"
 featured: true
 github: "https://github.com/cfuglestad/doc-drift-analyzer"
+demo: "https://doc-drift-analyzer.streamlit.app/"
 date: 2026-06-01
 ---
 

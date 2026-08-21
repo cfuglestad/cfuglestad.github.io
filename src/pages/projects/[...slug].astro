@@ -48,6 +48,11 @@ const categoryLabel = {
       </div>
 
       <footer class="project-page-footer">
+        {project.data.demo && (
+          <a class="button primary" href={project.data.demo} target="_blank" rel="noreferrer">
+            Live demo <span aria-hidden="true">→</span>
+          </a>
+        )}
         {project.data.github && (
           <a class="button secondary" href={project.data.github} target="_blank" rel="noreferrer">
             View source on GitHub <span aria-hidden="true">→</span>

@@ -6,6 +6,7 @@ tags: ["Python", "LangGraph", "DSPy", "QLoRA", "MLflow", "LangChain", "Fine-tuni
 status: "in-progress"
 featured: true
 github: "https://github.com/cfuglestad/resume-optimization"
+demo: "https://resume-optimization-tool.streamlit.app/"
 date: 2026-07-01
 ---
 
