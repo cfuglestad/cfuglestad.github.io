@@ -1,11 +1,87 @@
 <header class="site-header">
   <div class="shell nav-wrap">
-    <a class="brand" href="#top" aria-label="Connor Fuglestad home">Connor Fuglestad</a>
-    <nav aria-label="Primary navigation">
-      <a href="#about">About</a>
-      <a href="#work">Work</a>
-      <a href="#experience">Experience</a>
-      <a href="#contact">Contact</a>
+    <a class="brand" href="/#top" aria-label="Connor Fuglestad home">
+      Connor Fuglestad
+    </a>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="primary-navigation"
+      aria-label="Open navigation menu"
+    >
+      <span class="menu-toggle-lines" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </button>
+
+    <nav id="primary-navigation" class="primary-nav" aria-label="Primary navigation">
+      <a href="/#about">About</a>
+      <a href="/projects/">Projects</a>
+      <a href="/#experience">Experience</a>
+      <a href="/#contact">Contact</a>
     </nav>
   </div>
 </header>
+
+<script is:inline>
+  (() => {
+    const button = document.querySelector('.menu-toggle');
+    const navigation = document.querySelector('#primary-navigation');
+
+    if (!(button instanceof HTMLButtonElement) || !(navigation instanceof HTMLElement)) {
+      return;
+    }
+
+    const setMenuState = (open) => {
+      button.setAttribute('aria-expanded', String(open));
+      button.setAttribute(
+        'aria-label',
+        open ? 'Close navigation menu' : 'Open navigation menu'
+      );
+      navigation.classList.toggle('is-open', open);
+      document.body.classList.toggle('menu-open', open);
+    };
+
+    button.addEventListener('click', () => {
+      setMenuState(button.getAttribute('aria-expanded') !== 'true');
+    });
+
+    navigation.addEventListener('click', (event) => {
+      if (event.target instanceof HTMLAnchorElement) {
+        setMenuState(false);
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && button.getAttribute('aria-expanded') === 'true') {
+        setMenuState(false);
+        button.focus();
+      }
+    });
+
+    document.addEventListener('click', (event) => {
+      if (
+        button.getAttribute('aria-expanded') === 'true' &&
+        event.target instanceof Node &&
+        !button.contains(event.target) &&
+        !navigation.contains(event.target)
+      ) {
+        setMenuState(false);
+      }
+    });
+
+    const desktopQuery = window.matchMedia('(min-width: 821px)');
+
+    const handleDesktopChange = (event) => {
+      if (event.matches) {
+        setMenuState(false);
+      }
+    };
+
+    desktopQuery.addEventListener('change', handleDesktopChange);
+  })();
+</script>

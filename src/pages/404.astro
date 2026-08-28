@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import '../styles/global.css';
+---
+
+<BaseLayout
+  title="Page Not Found | Connor Fuglestad"
+  description="The requested page could not be found."
+  noindex={true}
+>
+  <Header />
+
+  <main id="main-content" class="error-page shell" tabindex="-1">
+    <p class="error-code">Error 404</p>
+    <h1>This page could not be found.</h1>
+    <p class="error-copy">
+      The address may have changed, or the page may no longer exist. Return to
+      the portfolio to explore Connor Fuglestad's work in healthcare AI,
+      applied data science, and analytics engineering.
+    </p>
+    <div class="hero-actions">
+      <a class="button primary" href="/">Return to the portfolio</a>
+      <a class="button secondary" href="mailto:fuglconn@gmail.com">Report a problem</a>
+    </div>
+  </main>
+</BaseLayout>

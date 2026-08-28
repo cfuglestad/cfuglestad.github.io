@@ -1,0 +1,129 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import '../../styles/global.css';
+
+const allProjects = await getCollection('projects');
+
+const caseStudies = allProjects
+  .filter((p) => p.data.category === 'case-study')
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const coursework = allProjects
+  .filter((p) => p.data.category === 'coursework')
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const research = allProjects
+  .filter((p) => p.data.category === 'research')
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const courseGroups = new Map<string, typeof coursework>();
+for (const project of coursework) {
+  const course = project.data.course || 'Other';
+  if (!courseGroups.has(course)) courseGroups.set(course, []);
+  courseGroups.get(course)!.push(project);
+}
+---
+<BaseLayout
+  title="Projects | Connor Fuglestad"
+  description="Case studies, coursework, and research projects in NLP, applied data science, and healthcare analytics."
+>
+  <Header />
+
+  <main id="main-content" tabindex="-1">
+    <div class="projects-page shell">
+      <div class="section-heading">
+        <p class="kicker">Projects</p>
+        <h1>Everything I've built, organized by type.</h1>
+      </div>
+
+      {caseStudies.length > 0 && (
+        <section class="projects-section">
+          <h2>Case Studies</h2>
+          <div class="projects-list">
+            {caseStudies.map((project) => (
+              <a href={`/projects/${project.id}/`} class="project-list-item">
+                <div class="project-list-meta">
+                  <span class="project-list-status" data-status={project.data.status}>
+                    {project.data.status === 'complete' ? 'Complete' : 'In progress'}
+                  </span>
+                  <time datetime={project.data.date.toISOString().split('T')[0]}>
+                    {project.data.date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
+                  </time>
+                </div>
+                <h3>{project.data.title}</h3>
+                <p>{project.data.description}</p>
+                <ul class="tag-list" aria-label={`${project.data.title} technologies`}>
+                  {project.data.tags.map((tag) => <li>{tag}</li>)}
+                </ul>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {coursework.length > 0 && (
+        <section class="projects-section">
+          <h2>Coursework</h2>
+          {[...courseGroups.entries()].map(([course, projects]) => (
+            <div class="course-group">
+              <h3 class="course-label">{course}</h3>
+              <div class="projects-list">
+                {projects.map((project) => (
+                  <a href={`/projects/${project.id}/`} class="project-list-item">
+                    <div class="project-list-meta">
+                      <span class="project-list-status" data-status={project.data.status}>
+                        {project.data.status === 'complete' ? 'Complete' : 'In progress'}
+                      </span>
+                      <time datetime={project.data.date.toISOString().split('T')[0]}>
+                        {project.data.date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
+                      </time>
+                    </div>
+                    <h3>{project.data.title}</h3>
+                    <p>{project.data.description}</p>
+                    <ul class="tag-list" aria-label={`${project.data.title} technologies`}>
+                      {project.data.tags.map((tag) => <li>{tag}</li>)}
+                    </ul>
+                  </a>
+                ))}
+              </div>
+            </div>
+          ))}
+        </section>
+      )}
+
+      {research.length > 0 && (
+        <section class="projects-section">
+          <h2>Research</h2>
+          <div class="projects-list">
+            {research.map((project) => (
+              <a href={`/projects/${project.id}/`} class="project-list-item">
+                <div class="project-list-meta">
+                  <span class="project-list-status" data-status={project.data.status}>
+                    {project.data.status === 'complete' ? 'Complete' : 'In progress'}
+                  </span>
+                  <time datetime={project.data.date.toISOString().split('T')[0]}>
+                    {project.data.date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
+                  </time>
+                </div>
+                <h3>{project.data.title}</h3>
+                <p>{project.data.description}</p>
+                <ul class="tag-list" aria-label={`${project.data.title} technologies`}>
+                  {project.data.tags.map((tag) => <li>{tag}</li>)}
+                </ul>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <p>© {new Date().getFullYear()} Connor Fuglestad</p>
+      <p>Built with Astro. Hosted on GitHub Pages.</p>
+    </div>
+  </footer>
+</BaseLayout>

@@ -8,39 +8,58 @@ import '../styles/global.css';
 const focusAreas = [
   {
     title: 'Healthcare AI',
-    body: 'Applying language technologies, machine learning, and quantitative methods to clinical and operational challenges.'
+    body: 'NLP and machine learning applied to clinical and operational problems. Interested in retrieval, summarization, and evaluation of healthcare evidence.'
   },
   {
     title: 'Applied Data Science',
-    body: 'Building reproducible analytical workflows grounded in econometrics, statistical modeling, and careful evaluation.'
+    body: 'Econometrics and statistical modeling with an emphasis on whether the measurement is valid, not just whether the pipeline runs.'
   },
   {
     title: 'Production Data Systems',
-    body: 'Designing scalable pipelines, APIs, and data models with Databricks, PySpark, SQL, and Python.'
+    body: 'Dimensional models, ETL pipelines, and metric layers on Databricks and PySpark. The part most researchers skip.'
   }
 ];
 
 const projects = [
   {
-    eyebrow: 'Flagship project',
-    title: 'Healthcare Evidence Explorer',
-    description: 'A planned evidence synthesis platform that will retrieve, summarize, and evaluate healthcare research with transparent citations and model-quality checks.',
-    tags: ['NLP', 'RAG', 'LLM Evaluation', 'Healthcare'],
-    status: 'In development'
+    eyebrow: 'Case study',
+    title: 'ATS Resume Optimization Pipeline',
+    description: 'A multi-agent system that extracts skills, scores alignment, and iteratively rewrites resumes to improve ATS match rate. LangGraph orchestration with a conditional tailor loop, DSPy prompt optimization, and QLoRA fine-tuning on free GPUs.',
+    tags: ['LangGraph', 'DSPy', 'QLoRA', 'MLflow', 'LangChain'],
+    href: '/projects/resume-optimization/',
+    status: 'In progress'
   },
   {
-    eyebrow: 'Coursework portfolio',
-    title: 'Natural Language Technology',
-    description: 'A growing collection of polished projects from the University of Washington certificate program, focused on language modeling, information retrieval, and evaluation.',
-    tags: ['Python', 'NLP', 'Information Retrieval', 'Evaluation'],
-    status: 'Beginning 2026'
+    eyebrow: 'NLP application',
+    title: 'Doc Drift Analyzer',
+    description: 'Compare document versions at the section level. Aligns sections by similarity, classifies changes, and renders word-level inline diffs. Lexical and local semantic embedding backends with reproducible evaluation.',
+    tags: ['Python', 'NLP', 'Streamlit', 'Semantic Similarity', 'Evaluation'],
+    href: '/projects/doc-drift-analyzer/',
+    status: 'Complete'
   },
   {
-    eyebrow: 'Professional case study',
-    title: 'Scalable Healthcare Analytics Systems',
-    description: 'A sanitized case study on modernizing healthcare analytics through reusable data pipelines, API-driven ingestion, dimensional models, and governed reporting layers.',
-    tags: ['Databricks', 'PySpark', 'SQL', 'APIs'],
-    status: 'Drafting'
+    eyebrow: 'Healthcare AI',
+    title: 'Clinical Guideline Q&A',
+    description: 'A RAG system that answers clinical questions from published practice guidelines with explicit citations. LangGraph agent with confidence-based abstention, ChromaDB semantic retrieval, and a labeled evaluation framework.',
+    tags: ['RAG', 'LangGraph', 'ChromaDB', 'Healthcare', 'Evaluation'],
+    href: '/projects/clinical-guideline-qanda/',
+    status: 'Complete'
+  },
+  {
+    eyebrow: 'Coursework · LING473',
+    title: 'Constituent Counter',
+    description: 'A recursive descent parser that counts syntactic constituent types in Penn Treebank annotated corpora. Standard library only, no NLTK.',
+    tags: ['Python', 'Parsing', 'Syntax', 'Recursion'],
+    href: '/projects/constituent-counter/',
+    status: 'Complete'
+  },
+  {
+    eyebrow: 'Coursework · LING473',
+    title: 'Unigram Language Model',
+    description: 'A corpus processing pipeline that strips SGML markup, tokenizes text, and builds a word frequency model from scratch.',
+    tags: ['Python', 'Language Modeling', 'Tokenization', 'Regex'],
+    href: '/projects/unigram-model/',
+    status: 'Complete'
   }
 ];
 ---
@@ -50,13 +69,14 @@ const projects = [
 >
   <Header />
 
-  <main id="top">
+  <main id="main-content" tabindex="-1">
+    <div id="top" aria-hidden="true"></div>
     <section class="hero shell">
       <div class="hero-copy">
-        <p class="kicker">Applied data science · analytics engineering · healthcare AI</p>
+        <p class="kicker">Applied data science · natural language processing · healthcare AI</p>
         <h1>Building rigorous data systems and AI applications for healthcare.</h1>
         <p class="hero-lede">
-          I am Connor Fuglestad, a technical analytics leader with more than seven years of experience across healthcare and consulting. I build production data systems today while expanding my work in natural language processing, machine learning, and applied research.
+          I'm Connor Fuglestad. I build analytics systems for health system clients at Vizient, mostly in Databricks and PySpark. Before that I studied econometrics at UW-Madison, and right now I'm finishing a graduate certificate in natural language technology at the University of Washington. I like problems where statistical rigor and production engineering both matter.
         </p>
         <div class="hero-actions">
           <a class="button primary" href="#work">View selected work</a>
@@ -79,24 +99,24 @@ const projects = [
         <p class="panel-label">Current focus</p>
         <p class="panel-title">Healthcare AI and natural language technology</p>
         <p>Lead, Analytics & Insights at Vizient</p>
-        <p>University of Washington Certificate in Natural Language Technology, expected 2027</p>
+        <p>University of Washington Graduate Certificate in Natural Language Technology, expected 2027</p>
         <div class="panel-rule"></div>
         <p class="panel-small">Omaha, Nebraska</p>
       </aside>
     </section>
 
-    <section id="about" class="section shell">
+    <section id="about" class="section shell reveal-section">
       <div class="section-heading">
         <p class="kicker">About</p>
-        <h2>An economist, engineer, and healthcare data practitioner.</h2>
+        <h2>An economist who builds data systems for healthcare.</h2>
       </div>
       <div class="about-grid">
         <div class="about-copy">
           <p>
-            My background combines graduate training in economics and econometrics with hands-on experience building analytics products, API integrations, and production data pipelines for health systems. I am especially interested in work that requires both technical depth and strong judgment about how data should be used.
+            My graduate training was in economics, focused on econometrics and statistical inference. I think that shows up in how I work: I'm more interested in whether a model is specified correctly than whether the code is clean. I've spent the past several years applying that instinct to healthcare data, and more recently to language technology and information retrieval through the UW program.
           </p>
           <p>
-            In my current role, I lead analytics engineering efforts for large health system clients using Databricks, PySpark, SQL, and Python. I set technical standards, guide solution design, and build reusable systems that support reliable decision-making. My next chapter is focused on applying that foundation to NLP, machine learning, and healthcare AI.
+            At Vizient, I build the analytics layer that health system clients use for quality reporting: star schemas, API integrations, reference-file-driven dimensional models, and a lot of SQL. I also set the technical standards for how our team writes PySpark. The coursework I'm doing at UW (information retrieval, language modeling, evaluation methods) is where most of my new energy goes.
           </p>
         </div>
         <div class="focus-grid">
@@ -110,14 +130,14 @@ const projects = [
       </div>
     </section>
 
-    <section id="work" class="section section-alt">
+    <section id="work" class="section section-alt reveal-section">
       <div class="shell">
         <div class="section-heading split-heading">
           <div>
             <p class="kicker">Selected work</p>
             <h2>Projects that connect healthcare, language, and quantitative research.</h2>
           </div>
-          <p class="section-note">This section is intentionally small. Each project will become a full case study as the work matures.</p>
+          <p class="section-note">Featured projects only. <a href="/projects/" class="text-link">See all projects including coursework →</a></p>
         </div>
         <div class="project-grid">
           {projects.map((project) => <ProjectCard {...project} />)}
@@ -125,46 +145,46 @@ const projects = [
       </div>
     </section>
 
-    <section id="experience" class="section shell">
+    <section id="experience" class="section shell reveal-section">
       <div class="section-heading">
         <p class="kicker">Experience</p>
-        <h2>A progression from quantitative analysis to technical leadership.</h2>
+        <h2>From econometrics to analytics engineering, mostly in healthcare.</h2>
       </div>
       <div class="experience-list">
         <ExperienceItem
           role="Lead, Analytics & Insights"
           company="Vizient, Inc."
           dates="December 2025 to present"
-          summary="Lead analytics engineering initiatives for large health system clients, including production pipelines, API-driven ingestion, dimensional data models, technical standards, and client-facing solution design."
+          summary="Build analytics systems for health system clients across multiple regions. Design dimensional models, metric layers, and automated data pipelines on Databricks. Set technical standards for the team's PySpark and SQL work."
         />
         <ExperienceItem
           role="Senior Analytics Engineer"
           company="Vizient, Inc."
           dates="April 2025 to December 2025"
-          summary="Led modernization efforts across analytics products, including platform migration, reusable Python components, AI-assisted analysis, and interactive reporting experiences."
+          summary="Migrated analytics products to Databricks and Unity Catalog. Built reusable Python ETL components and started integrating AI-assisted analysis (automated summarization, anomaly detection) into reporting workflows."
         />
         <ExperienceItem
           role="Analytics Engineer"
           company="Vizient, Inc."
           dates="November 2022 to April 2025"
-          summary="Built and optimized foundational Python and SQL workflows that reduced manual effort, improved performance, and supported reporting across client health systems."
+          summary="Designed a reference-file-driven data architecture powering all dimensional models (40+ source files, automated Spark ingestion). Built the SQL transformation layer between raw healthcare data and governed reporting surfaces."
         />
         <ExperienceItem
           role="Analytics Consultant"
           company="University of Wisconsin Health System"
           dates="January 2022 to November 2022"
-          summary="Applied statistical and econometric methods to clinical and operational data, supporting forecasting, staffing decisions, quality measurement, and self-service analytics."
+          summary="Applied econometric methods to clinical and operational data. Demand forecasting, staffing optimization, quality measurement. First time working directly with EHR data and clinical teams."
         />
         <ExperienceItem
           role="Consultant"
           company="Resolution Economics"
           dates="April 2019 to July 2020"
-          summary="Constructed analytical datasets and communicated quantitative findings for economic consulting and class action litigation."
+          summary="Built analytical datasets for economic consulting and class action litigation. Quantitative analysis and expert report writing."
         />
       </div>
     </section>
 
-    <section class="section section-alt">
+    <section class="section section-alt reveal-section">
       <div class="shell education-grid">
         <div class="section-heading">
           <p class="kicker">Education</p>
@@ -173,7 +193,7 @@ const projects = [
         <div class="education-list">
           <article>
             <p class="education-school">University of Washington</p>
-            <h3>Certificate in Natural Language Technology</h3>
+            <h3>Graduate Certificate in Natural Language Technology</h3>
             <p>In progress, expected 2027</p>
           </article>
           <article>
@@ -190,7 +210,7 @@ const projects = [
       </div>
     </section>
 
-    <section id="contact" class="contact-section">
+    <section id="contact" class="contact-section reveal-section">
       <div class="shell contact-inner">
         <div>
           <p class="kicker light">Contact</p>

@@ -8,11 +8,12 @@ interface Props {
   status?: string;
 }
 const { eyebrow, title, description, tags, href, status } = Astro.props;
+const isComplete = status?.toLowerCase() === 'complete';
 ---
 <article class="project-card">
   <div class="project-meta">
     <span>{eyebrow}</span>
-    {status && <span class="status">{status}</span>}
+    {status && <span class:list={['status', { 'status-complete': isComplete }]}>{status}</span>}
   </div>
   <h3>{title}</h3>
   <p>{description}</p>
