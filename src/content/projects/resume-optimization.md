@@ -4,7 +4,7 @@ description: "A multi-agent resume tailoring system using LangGraph for stateful
 category: "case-study"
 tags: ["Python", "LangGraph", "DSPy", "QLoRA", "MLflow", "LangChain", "Fine-tuning"]
 status: "in-progress"
-featured: true
+featured: false
 github: "https://github.com/cfuglestad/resume-optimization"
 demo: "https://resume-optimization-tool.streamlit.app/"
 date: 2026-07-01
